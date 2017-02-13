@@ -1,0 +1,50 @@
+{
+  "name": "egg-kafka",
+  "version": "1.0.0",
+  "description": "Kafka plugin for egg",
+  "eggPlugin": {
+    "name": "kafka"
+  },
+  "keywords": [
+    "egg-kafka",
+    "egg-Plugin",
+    "eggjs"
+  ],
+  "dependencies": {
+    "kafka-node": "^1.3.4"
+  },
+  "devDependencies": {
+    "autod": "^2.7.1",
+    "egg": "^0.12.0",
+    "egg-bin": "^2.0.2",
+    "egg-mock": "^3.0.0",
+    "eslint": "^3.15.0",
+    "eslint-config-egg": "^3.2.0",
+    "supertest": "^3.0.0",
+    "utility": "^1.9.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "6, 7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntfs32/egg-kafka.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ntfs32/egg-kafka/issues"
+  },
+  "homepage": "https://github.com/ntfs32/egg-kafka#readme",
+  "author": "ntfs32",
+  "license": "MIT"
+}
