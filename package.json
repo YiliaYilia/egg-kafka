@@ -11,7 +11,8 @@
     "eggjs"
   ],
   "dependencies": {
-    "kafka-node": "^1.3.4"
+    "kafka-node": "^1.3.4",
+    "thunkify": "^2.1.2"
   },
   "devDependencies": {
     "autod": "^2.7.1",

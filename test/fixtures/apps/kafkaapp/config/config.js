@@ -1,10 +1,11 @@
-'use strict'
+'use strict';
 
 exports.kafka = {
   client: {
-    host: '127.0.0.1',
-    port: 2181
+    host: 'localhost',
+    port: 2181,
   },
-  app: true,
-  agent: true
-}
+  agent: true,
+};
+
+exports.keys = 'testkeys';

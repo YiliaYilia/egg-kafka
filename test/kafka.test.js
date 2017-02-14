@@ -25,15 +25,11 @@ describe('test/kafka.test.js', () => {
 
   after(() => {
     // TODO
-    // app.kafka.end(err => {
-    //   app.close()
-    //   done(err)
-    // })
   });
 
   afterEach(mm.restore);
 
-  it('should query', () => {
+  it('Index Access Test', () => {
     return request(app.callback())
       .get('/')
       .expect(200);
