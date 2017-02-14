@@ -1,7 +1,7 @@
 'use strict';
 
-const mysql = require('./lib/kafka');
+const kafka = require('./lib/kafka');
 
 module.exports = agent => {
-  if (agent.config.kafka.agent) mysql(agent);
+  if (agent.config.kafka.agent) kafka(agent);
 };
