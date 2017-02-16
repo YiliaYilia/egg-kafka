@@ -14,9 +14,9 @@ before_script:
   - wget http://apache.claz.org/kafka/0.10.0.0/kafka_2.11-0.10.0.0.tgz
   - tar zxvf kafka_2.11-0.10.0.0.tgz
   - cd kafka_2.11-0.10.0.0
-  - bin/zookeeper-server-start.sh config/zookeeper.properties &
-  - bin/kafka-server-start.sh config/server.properties &
-  
+  - bin/zookeeper-server-start.sh config/zookeeper.properties >/dev/null &
+  - bin/kafka-server-start.sh config/server.properties >/dev/null &
+
 install:
   - npm i npminstall && npminstall
 script:
