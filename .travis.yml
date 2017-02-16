@@ -3,14 +3,19 @@ node_js:
   - 6
   - 7
 install:
-  - npm i npminstall && npminstall
-  - wget http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
-  - tar zxvf jdk-8u121-linux-x64.tar.gz
-  - cd jdk1.8.0_121
-  - export JAVA_HOME=`pwd`
-  - export JRE_HOME=${JAVA_HOME}/jre  
-  - export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
-  - export PATH=${JAVA_HOME}/bin:$PATH
+#  - npm i npminstall && npminstall
+#  - wget http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
+#  - tar zxvf jdk-8u121-linux-x64.tar.gz
+#  - cd jdk1.8.0_121
+#  - export JAVA_HOME=`pwd`
+#  - export JRE_HOME=${JAVA_HOME}/jre  
+#  - export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+#  - export PATH=${JAVA_HOME}/bin:$PATH
+  - sudo add-apt-repository ppa:webupd8team/java
+  - sudo apt-get update
+  - sudo apt-get install oracle-java8-installer
+  - echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+  - sudo update-java-alternatives -s java-8-oracle
   - echo $PATH
   - java -version
   - wget http://www-us.apache.org/dist/kafka/0.10.1.1/kafka-0.10.1.1-src.tgz
