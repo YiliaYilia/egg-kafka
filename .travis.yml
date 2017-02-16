@@ -22,7 +22,8 @@ install:
   - wget http://www-us.apache.org/dist/kafka/0.10.1.1/kafka-0.10.1.1-src.tgz
   - tar zxvf kafka-0.10.1.1-src.tgz
   - cd kafka-0.10.1.1-src
-  - bin/kafka-server-start.sh config/server.properties
+  - bin/zookeeper-server-start.sh config/zookeeper.properties
+  - bin/kafka-server-start.sh config/server-1.properties
 script:
   - npm run ci
 after_script:
