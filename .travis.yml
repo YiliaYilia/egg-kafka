@@ -6,7 +6,7 @@ install:
   - npm i npminstall && npminstall
   - wget http://mirrors.linuxeye.com/jdk/jdk-8u121-linux-x64.tar.gz
   - tar zxvf jdk-8u121-linux-x64.tar.gz
-  - cd jdk1.8.0_25
+  - cd jdk1.8.0_121
   - export JAVA_HOME=`pwd`
   - export JRE_HOME=${JAVA_HOME}/jre  
   - export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
