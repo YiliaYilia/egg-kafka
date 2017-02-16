@@ -4,7 +4,7 @@ node_js:
   - 7
 install:
   - npm i npminstall && npminstall
-  - wget http://mirrors.linuxeye.com/jdk/jdk-8u121-linux-x64.tar.gz
+  - wget http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
   - tar zxvf jdk-8u121-linux-x64.tar.gz
   - cd jdk1.8.0_121
   - export JAVA_HOME=`pwd`
