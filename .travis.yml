@@ -15,7 +15,7 @@ before_install:
   - tar zxvf kafka_2.11-0.10.0.0.tgz
   - cd kafka_2.11-0.10.0.0
   - bin/zookeeper-server-start.sh config/zookeeper.properties &
-  - bin/kafka-server-start.sh config/server-1.properties &
+  - bin/kafka-server-start.sh config/server.properties &
   
 install:
   - npm i npminstall && npminstall
