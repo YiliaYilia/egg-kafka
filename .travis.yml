@@ -5,16 +5,7 @@ node_js:
   - 7
 # jdk
 # kafka
-install:
-  - npm i npminstall && npminstall
-#  - wget http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
-#  - tar zxvf jdk-8u121-linux-x64.tar.gz
-#  - cd jdk1.8.0_121
-#  - export JAVA_HOME=`pwd`
-#  - export JRE_HOME=${JAVA_HOME}/jre  
-#  - export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
-#  - export PATH=${JAVA_HOME}/bin:$PATH
-# install jdk
+before_install:
   - sudo apt-get update
   - sudo apt-get install default-jre
   - sudo apt-get install default-jdk
@@ -25,6 +16,9 @@ install:
   - cd kafka_2.11-0.10.0.0
   - bin/zookeeper-server-start.sh config/zookeeper.properties &
   - bin/kafka-server-start.sh config/server-1.properties &
+  
+install:
+  - npm i npminstall && npminstall
 script:
   - npm run ci
 after_script:
