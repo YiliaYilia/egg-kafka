@@ -2,8 +2,6 @@ language: node_js
 node_js:
   - "6"
   - "7"
-jdk:
-  - oraclejdk8
 install:
   - npm i npminstall && npminstall
   - wget http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz?AuthParam=1487258199_7ceacd58a6d82ad898694c7c6ad3f0da
