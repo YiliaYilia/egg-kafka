@@ -12,6 +12,7 @@ install:
   - export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
   - export PATH=${JAVA_HOME}/bin:$PATH
   - echo $PATH
+  - java -version
   - wget http://www-us.apache.org/dist/kafka/0.9.0.1/kafka-0.9.0.1-src.tgz
   - tar zxvf kafka-0.9.0.1-src.tgz
   - cd kafka-0.9.0.1-src
