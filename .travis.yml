@@ -6,10 +6,12 @@ install:
   - npm i npminstall && npminstall
   - wget http://mirrors.linuxeye.com/jdk/jdk-8u121-linux-x64.tar.gz
   - tar zxvf jdk-8u121-linux-x64.tar.gz
-  - export JAVA_HOME=`pwd`/jdk1.8.0_25  
+  - cd jdk1.8.0_25
+  - export JAVA_HOME=`pwd`
   - export JRE_HOME=${JAVA_HOME}/jre  
   - export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
   - export PATH=${JAVA_HOME}/bin:$PATH
+  - echo $PATH
   - wget http://www-us.apache.org/dist/kafka/0.9.0.1/kafka-0.9.0.1-src.tgz
   - tar zxvf kafka-0.9.0.1-src.tgz
   - cd kafka-0.9.0.1-src
