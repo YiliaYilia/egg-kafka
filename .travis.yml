@@ -13,9 +13,9 @@ install:
   - export PATH=${JAVA_HOME}/bin:$PATH
   - echo $PATH
   - java -version
-  - wget http://www-us.apache.org/dist/kafka/0.9.0.1/kafka-0.9.0.1-src.tgz
-  - tar zxvf kafka-0.9.0.1-src.tgz
-  - cd kafka-0.9.0.1-src
+  - wget http://www-us.apache.org/dist/kafka/0.10.1.1/kafka-0.10.1.1-src.tgz
+  - tar zxvf kafka-0.10.1.1-src.tgz
+  - cd kafka-0.10.1.1-src
   - bin/kafka-server-start.sh config/server.properties
 script:
   - npm run ci
