@@ -19,9 +19,9 @@ install:
   - sudo apt-get install default-jdk
   - echo $PATH
   - java -version
-  - wget http://www-us.apache.org/dist/kafka/0.10.1.1/kafka-0.10.1.1-src.tgz
-  - tar zxvf kafka-0.10.1.1-src.tgz
-  - cd kafka-0.10.1.1-src
+  - wget http://apache.claz.org/kafka/0.10.0.0/kafka_2.11-0.10.0.0.tgz
+  - tar zxvf kafka_2.11-0.10.0.0.tgz
+  - cd kafka_2.11-0.10.0.0
   - bin/zookeeper-server-start.sh config/zookeeper.properties
   - bin/kafka-server-start.sh config/server-1.properties
 script:
