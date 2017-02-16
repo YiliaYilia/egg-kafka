@@ -8,3 +8,4 @@ exports.kafka = {
   app: true,
   agent: true
 }
+exports.keys = 'test'
