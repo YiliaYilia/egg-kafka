@@ -5,7 +5,7 @@ node_js:
   - 7
 # jdk
 # kafka
-before_install:
+before_script:
   - sudo apt-get update
   - sudo apt-get install default-jre
   - sudo apt-get install default-jdk
