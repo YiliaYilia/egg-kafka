@@ -2,7 +2,7 @@
 
 exports.kafka = {
   client: {
-    host: process.env['KAFKA_TEST_HOST'] || '',
+    host: '127.0.0.1:2181',
     clientId: 'egg-kafka-clientid'
   },
   app: true,
