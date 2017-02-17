@@ -47,10 +47,19 @@ example:
 'use strict'
 
 module.exports = function * () {
-    //producer() optionl arguments true/false it`s aysnc/sync to create topics in kafka-node
-  let createTopicsResult = yield this.app.kafka.producer().createTopicsAsync(['topic5'], true)
-  // send create topics request to the kafka server , but there not anything response,why ?
-  let sendResult = yield this.app.kafka.producer().sendAsync([{ topic: 'topic5', messages: 'test' + new Date().getSeconds(), partition: 0 }])
+  // producer() optionl arguments true/false
+  // it`s aysnc/sync to create topics in kafka-node
+  let createTopicsResult = yield this.app.kafka.producer()
+  .createTopicsAsync([ 'topic5' ], true )
+  // send create topics request to the kafka server ,
+  // but there not anything response,why ?
+  let sendResult = yield this.app.kafka.producer()
+    .sendAsync([{
+       topic: 'topic5', 
+       messages: 'test' + new Date().getSeconds(), 
+       partition: 0 
+      }]
+    )
 }
 ```
 
@@ -60,15 +69,28 @@ example:
 'use strict'
 
 module.exports = function * () {
-    //producer() optionl arguments true/false it`s aysnc/sync to create topics in kafka-node
-  let createTopicsResult = yield this.app.kafka.highLevelProducer().createTopicsAsync(['topic5'], true)
-  // send create topics request to the kafka server , but there not anything response,why ?
-  let sendResult = yield this.app.kafka.highLevelProducer().sendAsync([{ topic: 'topic5', messages: 'test' + new Date().getSeconds(), partition: 0 }])
+  // producer() optionl arguments true/false
+  // it`s aysnc/sync to create topics in kafka-node
+  let createTopicsResult = yield this.app.kafka.highLevelProducer()
+  .createTopicsAsync([ 'topic5' ], true )
+  // send create topics request to the kafka server ,
+  // but there not anything response,why ?
+  let sendResult = yield this.app.kafka.highLevelProducer()
+    .sendAsync([{
+       topic: 'topic5', 
+       messages: 'test' + new Date().getSeconds(), 
+       partition: 0 
+      }]
+    )
 }
 ```
 
 -------------- 待完善 ----------------
+
 ## Comuser
+
 ## HighLevelConsumer
+
 ## ConsumerGroup
+
 ## Offset
