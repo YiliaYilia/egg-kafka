@@ -33,7 +33,7 @@
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
-    "ci": "./run-tests.sh",
+    "ci": "npm run lint && npm rum cov",
     "startDocker": "./start-docker.sh",
     "stopDocker": "docker-compose down",
     "autod": "autod"

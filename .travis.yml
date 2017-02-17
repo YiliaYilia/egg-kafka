@@ -22,6 +22,7 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose up -d
+  - ./run-tests.sh
 after_failure:
   - docker ps
   - docker-compose logs
