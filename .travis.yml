@@ -1,38 +1,25 @@
 language: node_js
+cache: yarn
 node_js:
-  - "7"
-  - "6"
-sudo: required
-services:
-  - docker
-env:
-  global:
-    - DOCKER_VERSION=1.12.1-0~trusty
-    - DOCKER_COMPOSE_VERSION=1.7.1
-    # - DEBUG=kafka-node:*
-    - KAFKA_ADVERTISED_HOST_NAME=127.0.0.1
-before_install:
-  - docker version
-  # list docker-engine versions
-  - apt-cache madison docker-engine
-  # upgrade docker-engine to specific version
-  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y --force-yes docker-engine=${DOCKER_VERSION}
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - docker-compose up -d
-  - ./run-tests.sh
-after_failure:
-  - docker ps
-  - docker-compose logs
+  - 6
+  - 7
+# jdk
+# kafka
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install default-jre
+  - sudo apt-get install default-jdk
+  - echo $PATH
+  - java -version
+  - wget http://apache.claz.org/kafka/0.10.0.0/kafka_2.11-0.10.0.0.tgz
+  - tar zxvf kafka_2.11-0.10.0.0.tgz
+  - cd kafka_2.11-0.10.0.0
+  - bin/zookeeper-server-start.sh config/zookeeper.properties >/dev/null &
+  - bin/kafka-server-start.sh config/server.properties >/dev/null &
+
 install:
   - npm i npminstall && npminstall
 script:
   - npm run ci
 after_script:
   - npminstall codecov && codecov
-
-
-
-
