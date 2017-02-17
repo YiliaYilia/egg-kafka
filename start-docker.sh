@@ -19,5 +19,3 @@ if [ -z "$TRAVIS" ]; then
 else
     DOCKER_VM_IP='127.0.0.1'
 fi
-export KAFKA_TEST_HOST=$DOCKER_VM_IP
-echo "KAFKA_TEST_HOST: $KAFKA_TEST_HOST"
